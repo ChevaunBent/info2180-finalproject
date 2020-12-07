@@ -24,10 +24,11 @@ session_start();
     '   <meta charset="UTF-8">'.
     '   <meta name="viewport" content="width=device-width, initial-scale=1.0">'.
     '   <link rel="stylesheet" type="text/css" href="http://localhost:8080/info2180-finalproject/styles/dashstyles.css" />'.
+    '   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>'.
     '   <script src="http://localhost:8080/info2180-finalproject/scripts/dashjavascript.js" type="text/javascript"></script>'.
     '   <title>Dashboard</title>'.
     '</head>'.
-    '<body>'.
+    '<body >'.
     '   <div class="grid-container">'.
     '       <header>'.
     '           <ul>'.
@@ -55,9 +56,14 @@ session_start();
     '                           </tr>'.
     '                       </thead>';
     $print =                '<tbody>';
-                              foreach($results as $items){
-                                  $print.= '<tr><td class="c1">'.$items['description'].'</td><td class="c2">'.$items['type'].'</td><td class="c3">'
-                                          .$items['status'].'</td><td class="c4">'.$items['assigned_to'].'</td><td class="c5">'.$items['created'].'</td></tr>';
+                              foreach($results as $items){  
+                                $asgn = $items['assigned_to'];
+                                $checkifexists = ("SELECT firstname, lastname FROM UsersTable WHERE id = '$asgn' ");
+                                $stmt = $conn->query($checkifexists);
+                                $results2 = $stmt ->fetchALL(PDO ::FETCH_ASSOC);
+                                foreach($results2 as $items2){$res = $items2['firstname']." ".$items2['lastname'];}
+                                  $print.= '<tr><td class="c1">'.$items['title'].'</td><td class="c2">'.$items['type'].'</td><td class="c3">'
+                                          .$items['status'].'</td><td class="c4">'.$res.'</td><td class="c5">'.$items['created'].'</td></tr>';
                               }
     $printcontd = 
     '                       </tbody>'.
@@ -72,6 +78,7 @@ session_start();
  echo $string; 
  echo $print;
  echo $printcontd;
+ $conn = null;//closes connection
  }else{
           //redirect to the login page
           header('Location: http://localhost:8080/info2180-finalproject/index.html');
