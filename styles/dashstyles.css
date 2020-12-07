@@ -1,0 +1,126 @@
+body{
+    padding: 3%;
+    display: flex;
+    width: 75%;
+    margin: auto;
+
+}
+
+
+#content{
+    display: flex;
+}
+
+
+header{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: rgb(70, 69, 69);
+    color: white;
+    height: auto;
+}
+
+header ul{
+    list-style: none;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+nav > ul {
+    background-color: rgb(210, 210, 210);
+    padding: auto;
+    padding-left: 0.5em;
+    margin: 0;
+    height: 100%;
+    width: 150px;
+}
+
+nav > ul > li {
+    list-style: none;
+    padding: 0.5em;
+}
+
+main{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+h1{
+    padding-left: 10px;
+}
+
+.grid-container{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#display {
+    width: 100%;
+    height: 100%;
+}
+
+
+#topdiv{
+    display: flex;
+}
+
+#userdiv{
+    position: absolute;
+    bottom:10%;
+    padding-left: 10px;
+    
+}
+
+table{
+    width: 100%;
+}
+
+.c1{
+    display: flex;
+    width: 20%;
+    padding: 10px;
+}
+
+.c2{
+    display: flex;
+    width: 20%;
+    padding-left: 10px;
+}
+
+.c3{
+    display: flex;
+    width: 20%;
+    padding-left: 10px;
+}
+
+.c4{
+    display: flex;
+    width: 20%;
+    padding-left: 10px;
+}
+
+.c5{
+    display: flex;
+    width: 20%;
+    padding-left: 10px;
+}
+
+tr{
+    display: flex;
+}

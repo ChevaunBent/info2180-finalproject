@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="styles/indexstyles.css" />
+    <script src="scripts/indexjavascript.js" type="text/javascript"></script>
+    <title>Login</title>
+</head>
+<body>
+    <slider></slider>
+    <form id='login' action='http://localhost:8080/info2180-finalproject/scripts/login.php' method='post' accept-charset='UTF-8'>
+        <div id='fields'>
+            <h2>User Login</h2>
+            <div id='imag'>
+                <img src="login.jpg" alt="login image">
+            </div>
+            <br><label for='username'>UserName:</label><br>
+            <input type='text' name='username' id='username'/><br>
+
+            <label for='password'>Password:</label><br>
+            <input type='password' name='password' id='password' /><br>
+
+            <div id='subdiv'>
+                <input type='submit' name='subbut' id='subbut' onclick="return Validate(login);" value='Login' />
+            </div>
+
+
+            <input type='hidden' name='submitted' id='submitted' value='1' />
+
+        </div>
+    </form>
+</body>
+<footer><p>INFO2180 Project2, Group 29<p></footer>
+</html>
